@@ -1,4 +1,4 @@
-#include <SFML/Audio.hpp>
+п»ї#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <random>
 
@@ -9,7 +9,7 @@
 using namespace sf;
 using namespace std;
 
-/*Сделай сначала один прямоугольник и выведи его*/
+/*РЎРґРµР»Р°Р№ СЃРЅР°С‡Р°Р»Р° РѕРґРёРЅ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє Рё РІС‹РІРµРґРё РµРіРѕ*/
 //--------------------------------------------------------------------------
 RectangleShape getRectangleShape(float x, float y, int v, int b)
 {
@@ -36,7 +36,7 @@ int main()
 
     vector<RectangleShape> rectangle;
 
-    //Вектор
+    //Р’РµРєС‚РѕСЂ
     vector<int> chisla;    
 
     // Start the game loop
@@ -56,7 +56,7 @@ int main()
             rectangle.push_back(getRectangleShape((10 + i) * 30, 100, 10, chisla[i]));
         }
 
-        // Очистка окна.
+        // РћС‡РёСЃС‚РєР° РѕРєРЅР°.
         window.clear();
 
         for (int i = 0; i < rectangle.size(); i++)
@@ -64,7 +64,7 @@ int main()
             window.draw(rectangle[i]);
         }
 
-        //Обновить окно
+        //РћР±РЅРѕРІРёС‚СЊ РѕРєРЅРѕ
         window.display();
     }
     return 0;
