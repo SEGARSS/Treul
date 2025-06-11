@@ -28,8 +28,8 @@ int main()
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> distrib(1, 500);
-    uniform_int_distribution<> distrib2(20, 100);
-    uniform_int_distribution<> distrib3(100, 400);
+    //uniform_int_distribution<> distrib2(20, 100);
+    //uniform_int_distribution<> distrib3(100, 400);
 
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML window");
@@ -50,7 +50,7 @@ int main()
                 window.close();
         }
 
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 10; i++)
         {
             chisla.push_back(distrib(gen));
             rectangle.push_back(getRectangleShape(10, 100, 10, chisla[i]));
