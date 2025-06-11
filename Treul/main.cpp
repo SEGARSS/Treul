@@ -53,7 +53,7 @@ int main()
         for (int i = 0; i < 10; i++)
         {
             chisla.push_back(distrib(gen));
-            rectangle.push_back(getRectangleShape(10, 100, 10, chisla[i]));
+            rectangle.push_back(getRectangleShape((10 + i) * 30, 100, 10, chisla[i]));
         }
 
         // Очистка окна.
