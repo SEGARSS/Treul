@@ -28,16 +28,22 @@ int main()
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> distrib(1, 500);
-    //uniform_int_distribution<> distrib2(20, 100);
-    //uniform_int_distribution<> distrib3(100, 400);
 
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML window");
 
+    // храним или только вектор прямоугольников, или вектор чисел
+    // потому что одновременно и то и другое нам не нужно
     vector<RectangleShape> rectangle;
 
     //Вектор
-    vector<int> chisla;    
+    //vector<int> chisla; //Получается, вектор с интами та и не нужен был?
+
+    for (int i = 0; i < 10; i++)
+    {
+        int tpm = distrib(gen);
+        rectangle.push_back(getRectangleShape((10 + i) * 30, 100, 10, tpm));
+    }
 
     // Start the game loop
     while (window.isOpen())
@@ -48,19 +54,14 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                 window.close();
-        }
-
-        for (int i = 0; i < 10; i++)
-        {
-            chisla.push_back(distrib(gen));
-            rectangle.push_back(getRectangleShape((10 + i) * 30, 100, 10, chisla[i]));
-        }
+        }        
 
         // Очистка окна.
         window.clear();
 
         for (int i = 0; i < rectangle.size(); i++)
         {
+            // выводим уже созданные до game loop прямоугольники
             window.draw(rectangle[i]);
         }
 
